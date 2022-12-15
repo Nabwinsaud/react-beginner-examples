@@ -3,6 +3,9 @@ import Record from "../components/users/Record";
 import AccordionComponent from "../components/Accordion";
 import ReadOnly from "../components/users/ReadOnly";
 import { FilterOptions } from "./urlsearchparams/UrlSearchParams";
+import { ProductList } from "../components/productImages/ProductImages";
+import { OTPInput } from "../components/otp/OtpPin";
+import { ProductGallery } from "../components/productImages/ProductGallery";
 export default function Home() {
   return (
     <div className="flex flex-col h-screen items-center justify-center w-full">
@@ -10,7 +13,9 @@ export default function Home() {
       {/* <Record /> */}
       {/* <ReadOnly/> */}
       {/* <Filter /> */}
-      <FilterOptions />
+      {/* <FilterOptions /> */}
+      {/* <ProductList /> */}
+      <ProductGallery />
       {/* <h1>The coding junkie</h1> */}
     </div>
   );

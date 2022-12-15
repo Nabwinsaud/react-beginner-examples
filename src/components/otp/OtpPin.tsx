@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-const OTPInput = () => {
+export const OTPInput = () => {
   const [otp, setOTP] = useState("");
+  console.log(otp);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // Allow only numbers to be entered
@@ -19,12 +20,14 @@ const OTPInput = () => {
   };
 
   return (
-    <input
-      type="tel"
-      pattern="[0-9]*"
-      value={otp}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-    />
+    <form>
+      <input
+        type="tel"
+        pattern="[0-9]*"
+        value={otp}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+      />
+    </form>
   );
 };
