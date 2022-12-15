@@ -88,17 +88,19 @@ export default function Filter() {
         ))}
       </select>
       <div className="flex flex-col bg-slate-300 text-black text-md rounded-md px-2 ">
-        {filteredNote.map((filterNote) => (
-          <div>
-            <p className="text-lg text-black">{filterNote.title}</p>
-            <h4 className="flex items-center">
-              {" "}
-              <span className="uppercase font-bold">category:</span>{" "}
-              {filterNote.category}
-            </h4>
-            <p>{filterNote.body}</p>
-          </div>
-        ))}
+        {filteredNote.map(
+          (filterNote, index: number): JSX.Element => (
+            <div key={index}>
+              <p className="text-lg text-black">{filterNote.title}</p>
+              <h4 className="flex items-center">
+                {" "}
+                <span className="uppercase font-bold">category:</span>{" "}
+                {filterNote.category}
+              </h4>
+              <p>{filterNote.body}</p>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

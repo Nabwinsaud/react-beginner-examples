@@ -1,16 +1,25 @@
-import AccordionComponent from "./components/Accordion";
-import Record from "./components/users/Record";
-import ReadOnly from "./components/users/ReadOnly";
-import { UserProps } from "./components/users/ReadOnly";
-import Filter from "./pages/blog/Filter";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./pages/layout";
+import Home from "./pages/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
+  },
+]);
 function App() {
-  return (
-    <div className="flex flex-col h-screen items-center justify-center w-full">
-      {/* <AccordionComponent /> */}
-      {/* <Record /> */}
-      <Filter />
-    </div>
-  );
+  const search = new URLSearchParams(location.search);
+  console.log(search);
+  const newParams = search.get("search");
+  console.log(newParams);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
