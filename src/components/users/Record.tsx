@@ -9,11 +9,11 @@ type User = {
 export default function Record() {
   const [user, setUser] = useState<Record<string, User>>({});
 
-  //   "aanaaja3"
   const addUser = () => {
     const id: string = Date.now().toString(36);
     setUser({
       ...user,
+
       [id]: {
         name: "nabin",
         age: 19,
@@ -41,6 +41,12 @@ export default function Record() {
           </div>
         ))}
       </div>
+
+      {Object.entries(user).map(([id, { age, name, email }]) => (
+        <>
+          <p>{age}</p>
+        </>
+      ))}
     </div>
   );
 }

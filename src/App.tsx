@@ -1,13 +1,14 @@
 import AccordionComponent from "./components/Accordion";
 import Record from "./components/users/Record";
+import ReadOnly from "./components/users/ReadOnly";
+import { UserProps } from "./components/users/ReadOnly";
+import Filter from "./pages/blog/Filter";
 function App() {
   return (
     <div className="flex flex-col h-screen items-center justify-center w-full">
       {/* <AccordionComponent /> */}
-      <h1 className="text-center my-2 uppercase text-pink-700 text-4xl ">
-        Let build some beginner stuffs
-      </h1>
-      <Record />
+      {/* <Record /> */}
+      <Filter />
     </div>
   );
 }
