@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./pages/layout";
+import Layout from "./pages/Layout";
 import Home from "./pages/Home";
+import { ProductsProvider } from "./context/ShoppingCartContext";
+import AuthContextProvider from "./context/AuthContext";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,13 @@ function App() {
   console.log(search);
   const newParams = search.get("search");
   console.log(newParams);
-  return <RouterProvider router={router} />;
+  return (
+    <AuthContextProvider>
+      <ProductsProvider>
+        <RouterProvider router={router} />;
+      </ProductsProvider>
+    </AuthContextProvider>
+  );
 }
 
 export default App;

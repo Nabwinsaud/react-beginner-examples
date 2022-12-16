@@ -41,7 +41,7 @@ export default function Filter() {
   const [category, setCategory] = useState<string>("all");
 
   // add notes
-  const addPost = (note: Note) => {
+  const addPost = (note: Note): void => {
     // const noteIndex = notes.findIndex((newNote) => newNote.id === note.id);
     const checkIfAlreadyExist = notes.find(
       (newNote: Note): boolean => newNote.id === note.id
@@ -63,6 +63,7 @@ export default function Filter() {
     setNotes(prevPost);
   };
   // filter category
+  //
   const categories: readonly string[] = Array.from(
     new Set(notes.map((note) => note.category))
   );
