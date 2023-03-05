@@ -8,6 +8,7 @@ interface IProducts {
   rating?: number;
 }
 
+// eslint-disable @typescript-eslint/no-empty-interface
 export interface ICartItem extends IProducts {
   quantity?: number;
 }
